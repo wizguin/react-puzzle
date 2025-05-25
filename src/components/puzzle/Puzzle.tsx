@@ -110,11 +110,15 @@ export default function Puzzle() {
         ]
     )
 
+    const [turn] = useState<number>(1)
+
     return (
         <div id='puzzle'>
             <Grid
                 grid={grid}
             />
+
+            Current Turn: {turn}/9
         </div>
     )
 
