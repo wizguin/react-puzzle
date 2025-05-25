@@ -1,3 +1,5 @@
+import './Cell.css'
+
 interface Props {
     value: number
 }
