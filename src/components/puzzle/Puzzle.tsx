@@ -1,6 +1,6 @@
 import './Puzzle.css'
 
-import { createStartGrid } from '../../utils/gridUtils'
+import Controls from './controls/Controls'
 import Grid from './grid/Grid'
 
 import { useEffect, useState } from 'react'
@@ -28,7 +28,7 @@ export default function Puzzle() {
         <div id='puzzle'>
             {grid.length > 0 && gridComponent}
 
-            Current Turn: {turn}/9
+            <Controls />
         </div>
     )
 
