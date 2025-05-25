@@ -1,3 +1,5 @@
+import './Box.css'
+
 import Cell from './cell/Cell'
 
 interface Props {
