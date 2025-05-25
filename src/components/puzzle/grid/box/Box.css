@@ -1,4 +1,6 @@
 .box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    border-radius: 15px;
+    background: #1a1a1a;
 }
