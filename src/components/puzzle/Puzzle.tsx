@@ -1,124 +1,32 @@
 import './Puzzle.css'
 
+import { createStartGrid } from '../../utils/gridUtils'
 import Grid from './grid/Grid'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export type GridData = number[][]
 
 export default function Puzzle() {
 
-    const [grid] = useState<Grid>(
-        [
-            [
-                7,
-                1,
-                0,
-                0,
-                0,
-                0,
-                4,
-                3,
-                0
-            ],
-            [
-                0,
-                8,
-                0,
-                1,
-                0,
-                0,
-                0,
-                6,
-                9
-            ],
-            [
-                0,
-                6,
-                0,
-                0,
-                0,
-                0,
-                2,
-                1,
-                0
-            ],
-            [
-                0,
-                4,
-                0,
-                0,
-                1,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                9,
-                0,
-                0,
-                4,
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                1,
-                2,
-                8,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
-                0,
-                0,
-                7,
-                0,
-                1,
-                0,
-                0,
-                0
-            ],
-            [
-                0,
-                9,
-                1,
-                0,
-                0,
-                0,
-                7,
-                0,
-                0
-            ],
-            [
-                0,
-                0,
-                6,
-                0,
-                0,
-                0,
-                0,
-                5,
-                0
-            ]
-        ]
-    )
+    const [solution, setSolution] = useState<GridData>([])
+
+    const [grid, setGrid] = useState<GridData>([])
 
     const [turn] = useState<number>(1)
 
+    useEffect(() => {
+        setGrid(createStartGrid(solution))
+    }, [solution])
+
+    const gridComponent =
+        <Grid
+            grid={grid}
+        />
+
     return (
         <div id='puzzle'>
-            <Grid
-                grid={grid}
-            />
+            {grid.length > 0 && gridComponent}
 
             Current Turn: {turn}/9
         </div>
