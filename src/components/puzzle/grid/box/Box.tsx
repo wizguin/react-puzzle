@@ -1,14 +1,20 @@
+import Cell from './cell/Cell'
+
 interface Props {
     data: number[]
 }
 
 export default function Box({ data }: Props) {
 
-    console.log(data)
+    const cells = data.map(value =>
+        <Cell
+            value={value}
+        />
+    )
 
     return (
         <div className='box'>
-            {data}
+            {cells}
         </div>
     )
 
