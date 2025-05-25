@@ -1,3 +1,5 @@
+import './Puzzle.css'
+
 import Grid from './grid/Grid'
 
 import { useState } from 'react'
