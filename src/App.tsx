@@ -1,7 +1,11 @@
+import './App.css'
+
 export default function App() {
 
     return (
-        <h1>App</h1>
+        <div id='container'>
+            <h1>react-puzzle</h1>
+        </div>
     )
 
 }
