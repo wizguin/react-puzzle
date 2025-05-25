@@ -8,7 +8,7 @@ export default function Cell({ value }: Props) {
 
     return (
         <div className='cell'>
-            {value}
+            {value || ''}
         </div>
     )
 
