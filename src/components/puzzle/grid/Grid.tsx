@@ -1,9 +1,10 @@
 import './Grid.css'
 
 import Box from './box/Box'
+import type { GridData } from '../Puzzle'
 
 interface Props {
-    grid: number[][]
+    grid: GridData
 }
 
 export default function Grid({ grid }: Props) {
