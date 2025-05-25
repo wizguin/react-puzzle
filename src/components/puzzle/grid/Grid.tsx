@@ -10,8 +10,9 @@ export default function Grid({ grid }: Props) {
 
     console.log(grid)
 
-    const boxes = grid.map(boxData =>
+    const boxes = grid.map((boxData, index) =>
         <Box
+            key={index}
             data={boxData}
         />
     )

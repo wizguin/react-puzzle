@@ -8,8 +8,9 @@ interface Props {
 
 export default function Box({ data }: Props) {
 
-    const cells = data.map(value =>
+    const cells = data.map((value, index) =>
         <Cell
+            key={index}
             value={value}
         />
     )
