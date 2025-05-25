@@ -1,3 +1,5 @@
+import './Grid.css'
+
 import Box from './box/Box'
 
 interface Props {
