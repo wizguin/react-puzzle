@@ -4,4 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid #2a2a2a;
+}
+
+.cell:hover {
+    background-color: #333;
 }
