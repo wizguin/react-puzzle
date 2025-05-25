@@ -4,7 +4,7 @@ import Grid from './grid/Grid'
 
 import { useState } from 'react'
 
-type Grid = number[][]
+export type GridData = number[][]
 
 export default function Puzzle() {
 
