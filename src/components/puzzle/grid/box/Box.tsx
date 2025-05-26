@@ -3,15 +3,18 @@ import './Box.css'
 import Cell from './cell/Cell'
 
 interface Props {
-    data: number[]
+    data: number[],
+    boxIndex: number
 }
 
-export default function Box({ data }: Props) {
+export default function Box({ data, boxIndex }: Props) {
 
     const cells = data.map((value, index) =>
         <Cell
             key={index}
             value={value}
+            boxIndex={boxIndex}
+            cellIndex={index}
         />
     )
 

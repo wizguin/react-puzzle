@@ -15,6 +15,7 @@ export default function Grid({ grid }: Props) {
         <Box
             key={index}
             data={boxData}
+            boxIndex={index}
         />
     )
 
