@@ -1,9 +1,10 @@
 import './ControlButton.css'
 
 import { gridAtom, selectedCellAtom, solutionAtom, turnGridAtom } from '../../../../atoms'
+import { isValidMove } from '../../../../utils/gridUtils'
 
 import { useAtomValue, useSetAtom } from 'jotai'
-import { isValidMove } from '../../../../utils/gridUtils'
+import { useEffect } from 'react'
 
 interface Props {
     value: number
@@ -17,7 +18,22 @@ export default function ControlButton({ value }: Props) {
 
     const selectedCell = useAtomValue(selectedCellAtom)
 
-    function onClick() {
+    // Bind keyboard shortcut
+    useEffect(() => {
+        window.addEventListener('keydown', onKeyDown)
+
+        return () => {
+            window.removeEventListener('keydown', onKeyDown)
+        }
+    }, [selectedCell])
+
+    function onKeyDown({ key }: KeyboardEvent) {
+        if (key === value.toString()) {
+            updateSelectedCell()
+        }
+    }
+
+    function updateSelectedCell() {
         if (!selectedCell) {
             return
         }
@@ -43,7 +59,7 @@ export default function ControlButton({ value }: Props) {
     return (
         <div
             className='control-button'
-            onClick={onClick}
+            onClick={updateSelectedCell}
         >
             {value}
         </div>
