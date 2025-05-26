@@ -17,6 +17,8 @@
 
 .cell.solved {
     background: #198b37;
+    pointer-events: none;
+    cursor: default;
 }
 
 .cell:hover {
@@ -24,10 +26,6 @@
     border-radius: 10px;
     background: #333;
     box-shadow: 0px 0px 20px 20px rgb(0 0 0 / 10%);
-}
-
-.cell.solved:hover {
-    background: #116d2a;
 }
 
 .cell:nth-child(1) {

@@ -1,3 +1,4 @@
+import type { GridData, SolvedGridData } from '../atoms'
 import { pickRandomIndex } from './randomUtils'
 import type { SolvedGridData } from '../atoms'
 
@@ -41,4 +42,8 @@ export function initTurnGrid(solution: SolvedGridData) {
     const empty = solution.map(box => box.map(_ => null))
 
     return empty
+}
+
+export function isValidMove(grid: GridData, solution: SolvedGridData, box: number, cell: number) {
+    return grid[box][cell] !== solution[box][cell]
 }

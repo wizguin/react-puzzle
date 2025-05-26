@@ -1,8 +1,9 @@
 import './ControlButton.css'
 
-import { gridAtom, selectedCellAtom, turnGridAtom } from '../../../../atoms'
+import { gridAtom, selectedCellAtom, solutionAtom, turnGridAtom } from '../../../../atoms'
 
 import { useAtomValue, useSetAtom } from 'jotai'
+import { isValidMove } from '../../../../utils/gridUtils'
 
 interface Props {
     value: number
@@ -11,6 +12,7 @@ interface Props {
 export default function ControlButton({ value }: Props) {
 
     const grid = useAtomValue(gridAtom)
+    const solution = useAtomValue(solutionAtom)
     const setTurnGrid = useSetAtom(turnGridAtom)
 
     const selectedCell = useAtomValue(selectedCellAtom)
@@ -24,7 +26,10 @@ export default function ControlButton({ value }: Props) {
 
         setTurnGrid(prev => {
             const next = [...prev]
-            // const boxData = grid[box]
+
+            if (!isValidMove(grid, solution, box, cell)) {
+                return next
+            }
 
             // Clear any moves from turn box
             next[box] = next[box].map(_ => null)
