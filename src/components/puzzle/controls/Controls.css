@@ -20,12 +20,12 @@
     user-select: none;
     cursor: pointer;
     transition: transform 0.2s;
-    background: #23ad48;
+    background: #198b37;
 }
 
 #controls__submit:hover {
     transform: scale(1.2);
-    background: #198b37;
+    background: #116d2a;
 }
 
 @media screen and (min-width: 550px) {
