@@ -1,15 +1,13 @@
 import './Grid.css'
 
 import Box from './box/Box'
-import type { GridData } from '../Puzzle'
+import { gridAtom } from '../../../atoms'
 
-interface Props {
-    grid: GridData
-}
+import { useAtomValue } from 'jotai'
 
-export default function Grid({ grid }: Props) {
+export default function Grid() {
 
-    console.log(grid)
+    const grid = useAtomValue(gridAtom)
 
     const boxes = grid.map((boxData, index) =>
         <Box

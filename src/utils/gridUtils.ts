@@ -1,3 +1,4 @@
+import type { GridData } from '../atoms'
 import { pickRandomIndex } from './randomUtils'
 
 /**
