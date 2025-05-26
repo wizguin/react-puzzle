@@ -21,9 +21,7 @@ export default function Puzzle() {
 
     return (
         <div id='puzzle'>
-            <Stats
-                turn={turn}
-            />
+            <Stats />
 
             {grid.length > 0 && <Grid />}
 

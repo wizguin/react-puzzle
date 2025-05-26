@@ -1,10 +1,12 @@
 import './Stats.css'
 
-interface Props {
-    turn: number
-}
+import { turnAtom } from '../../../atoms'
 
-export default function Stats({ turn }: Props) {
+import { useAtomValue } from 'jotai'
+
+export default function Stats() {
+
+    const turn = useAtomValue(turnAtom)
 
     return (
         <div id='stats'>
