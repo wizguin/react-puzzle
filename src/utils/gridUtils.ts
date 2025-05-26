@@ -38,10 +38,8 @@ function createStartBox(box: number[]) {
     return result
 }
 
-export function initTurnGrid(solution: SolvedGridData) {
-    const empty = solution.map(box => box.map(_ => null))
-
-    return empty
+export function resetTurnGrid() {
+    return Array(9).fill(Array(9).fill(null))
 }
 
 export function isValidMove(grid: GridData, solution: SolvedGridData, box: number, cell: number) {

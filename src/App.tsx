@@ -1,6 +1,6 @@
 import './App.css'
 
-import { createStartGrid, generateSolution, initTurnGrid } from './utils/gridUtils'
+import { createStartGrid, generateSolution, resetTurnGrid } from './utils/gridUtils'
 import { gridAtom, solutionAtom, turnGridAtom } from './atoms'
 import Puzzle from './components/puzzle/Puzzle'
 
@@ -22,7 +22,7 @@ export default function App() {
     // Initialize grids for new game
     useEffect(() => {
         setGrid(createStartGrid(solution))
-        setTurnGrid(initTurnGrid(solution))
+        setTurnGrid(resetTurnGrid())
     }, [solution])
 
     return (
