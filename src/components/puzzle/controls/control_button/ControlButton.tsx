@@ -1,6 +1,6 @@
 import './ControlButton.css'
 
-import { gridAtom, selectedCellAtom } from '../../../../atoms'
+import { gridAtom, selectedCellAtom, turnGridAtom } from '../../../../atoms'
 
 import { useAtomValue, useSetAtom } from 'jotai'
 
@@ -10,7 +10,9 @@ interface Props {
 
 export default function ControlButton({ value }: Props) {
 
-    const setGrid = useSetAtom(gridAtom)
+    const grid = useAtomValue(gridAtom)
+    const setTurnGrid = useSetAtom(turnGridAtom)
+
     const selectedCell = useAtomValue(selectedCellAtom)
 
     function onClick() {
@@ -18,10 +20,16 @@ export default function ControlButton({ value }: Props) {
             return
         }
 
-        setGrid(grid => {
-            const next = [...grid]
+        const { box, cell } = selectedCell
 
-            next[selectedCell.box][selectedCell.cell] = value
+        setTurnGrid(prev => {
+            const next = [...prev]
+            // const boxData = grid[box]
+
+            // Clear any moves from turn box
+            next[box] = next[box].map(_ => null)
+
+            next[box][cell] = value
 
             return next
         })
