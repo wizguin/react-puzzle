@@ -1,6 +1,6 @@
 import './Cell.css'
 
-import { selectedCellAtom, solutionAtom } from '../../../../../atoms'
+import { selectedCellAtom, solutionAtom, turnGridAtom } from '../../../../../atoms'
 import { classNames } from '../../../../../utils/cssUtils'
 
 import { useAtom, useAtomValue } from 'jotai'
@@ -14,6 +14,8 @@ interface Props {
 export default function Cell({ value, boxIndex, cellIndex }: Props) {
 
     const solution = useAtomValue(solutionAtom)
+    const turnGrid = useAtomValue(turnGridAtom)
+
     const [selectedCell, setSelectedCell] = useAtom(selectedCellAtom)
 
     const active =
@@ -35,12 +37,15 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
         solved && 'solved'
     )
 
+    // Use value from turn if exists
+    const currentValue = turnGrid[boxIndex][cellIndex] || value || ''
+
     return (
         <div
             className={classes}
             onClick={onClick}
         >
-            {value || ''}
+            {currentValue}
         </div>
     )
 
