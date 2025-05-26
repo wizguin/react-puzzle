@@ -1,5 +1,4 @@
-import type { GridData } from '../components/puzzle/Puzzle'
-import { pickRandomIndex } from './random'
+import { pickRandomIndex } from './randomUtils'
 
 /**
  * Creates a starting grid from a solved grid, randomly picking 3 correct cells in each box.
