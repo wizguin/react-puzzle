@@ -6,7 +6,7 @@ import { classNames } from '../../../../../utils/cssUtils'
 import { useAtom, useAtomValue } from 'jotai'
 
 interface Props {
-    value: number,
+    value: number | null,
     boxIndex: number,
     cellIndex: number
 }

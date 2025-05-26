@@ -3,7 +3,7 @@ import './Box.css'
 import Cell from './cell/Cell'
 
 interface Props {
-    data: number[],
+    data: (number | null)[],
     boxIndex: number
 }
 
