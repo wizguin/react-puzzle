@@ -1,14 +1,36 @@
 #controls {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#controls__numbers {
+    width: 100%;
+    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
+#controls__submit {
+    padding: 10px 15px;
+    border-radius: 10px;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    background: #23ad48;
+}
+
+#controls__submit:hover {
+    transform: scale(1.2);
+    background: #198b37;
+}
+
 @media screen and (min-width: 550px) {
 
-    #controls {
+    #controls__numbers {
         justify-content: space-between;
     }
 
