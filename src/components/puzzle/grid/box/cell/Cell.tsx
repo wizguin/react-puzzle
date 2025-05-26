@@ -1,9 +1,9 @@
 import './Cell.css'
 
+import { selectedCellAtom, solutionAtom } from '../../../../../atoms'
 import { classNames } from '../../../../../utils/cssUtils'
-import { selectedCellAtom } from '../../../../../atoms'
 
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 
 interface Props {
     value: number,
@@ -13,11 +13,14 @@ interface Props {
 
 export default function Cell({ value, boxIndex, cellIndex }: Props) {
 
+    const solution = useAtomValue(solutionAtom)
     const [selectedCell, setSelectedCell] = useAtom(selectedCellAtom)
 
     const active =
         selectedCell?.box === boxIndex &&
         selectedCell?.cell === cellIndex
+
+    const solved = solution[boxIndex][cellIndex] === value
 
     function onClick() {
         setSelectedCell({
@@ -26,9 +29,15 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
         })
     }
 
+    const classes = classNames(
+        'cell',
+        active && 'active',
+        solved && 'solved'
+    )
+
     return (
         <div
-            className={classNames('cell', active && 'active')}
+            className={classes}
             onClick={onClick}
         >
             {value || ''}

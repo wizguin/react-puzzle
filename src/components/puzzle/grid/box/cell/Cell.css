@@ -15,11 +15,19 @@
     border-color: white;
 }
 
+.cell.solved {
+    background: #198b37;
+}
+
 .cell:hover {
     transform: scale(1.2);
     border-radius: 10px;
     background: #333;
     box-shadow: 0px 0px 20px 20px rgb(0 0 0 / 10%);
+}
+
+.cell.solved:hover {
+    background: #116d2a;
 }
 
 .cell:nth-child(1) {
