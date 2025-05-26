@@ -2,6 +2,7 @@ import './Puzzle.css'
 
 import Controls from './controls/Controls'
 import Grid from './grid/Grid'
+import Stats from './stats/Stats'
 
 import { useEffect, useState } from 'react'
 
@@ -26,6 +27,10 @@ export default function Puzzle() {
 
     return (
         <div id='puzzle'>
+            <Stats
+                turn={turn}
+            />
+
             {grid.length > 0 && gridComponent}
 
             <Controls />

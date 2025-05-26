@@ -1,0 +1,12 @@
+#stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats__turn {
+    padding: 10px 15px;
+    border-radius: 10px;
+    user-select: none;
+    background: #2a2a2a;
+}
