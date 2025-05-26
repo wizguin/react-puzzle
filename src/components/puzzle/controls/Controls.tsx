@@ -12,7 +12,11 @@ export default function Controls() {
 
     return (
         <div id='controls'>
-            {buttons}
+            <div id='controls__numbers'>
+                {buttons}
+            </div>
+
+            <div id='controls__submit'>Submit Turn</div>
         </div>
     )
 
