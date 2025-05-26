@@ -6,6 +6,7 @@ export default function Controls() {
 
     const buttons = Array.from(Array(9), (_, index) =>
         <ControlButton
+            key={index}
             value={index + 1}
         />
     )
