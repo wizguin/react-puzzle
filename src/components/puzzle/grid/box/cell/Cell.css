@@ -21,6 +21,14 @@
     cursor: default;
 }
 
+.cell.failed {
+    background: #8b1919;
+}
+
+.cell.failed:hover {
+    background: #aa2020;
+}
+
 .cell:hover {
     transform: scale(1.2);
     border-radius: 10px;

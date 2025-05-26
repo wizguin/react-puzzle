@@ -18,11 +18,23 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
 
     const [selectedCell, setSelectedCell] = useAtom(selectedCellAtom)
 
+    // Use value from turn if exists
+    const currentValue = turnGrid[boxIndex][cellIndex] || value || ''
+
     const active =
         selectedCell?.box === boxIndex &&
         selectedCell?.cell === cellIndex
 
     const solved = solution[boxIndex][cellIndex] === value
+
+    const failed = Boolean(value) && !solved
+
+    const classes = classNames(
+        'cell',
+        active && 'active',
+        solved && 'solved',
+        failed && 'failed'
+    )
 
     function onClick() {
         setSelectedCell({
@@ -30,15 +42,6 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
             cell: cellIndex
         })
     }
-
-    const classes = classNames(
-        'cell',
-        active && 'active',
-        solved && 'solved'
-    )
-
-    // Use value from turn if exists
-    const currentValue = turnGrid[boxIndex][cellIndex] || value || ''
 
     return (
         <div
