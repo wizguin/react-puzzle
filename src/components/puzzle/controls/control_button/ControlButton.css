@@ -10,10 +10,10 @@
     cursor: pointer;
     transition: transform 0.2s;
     font-size: 20px;
-    background: #398dca;
+    background: #444;
 }
 
 .control-button:hover {
     transform: scale(1.2);
-    background: #2c73a5;
+    background: #555;
 }
