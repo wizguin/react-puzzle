@@ -6,13 +6,20 @@
 
 #stats__turn,
 #stats__instructions-button {
-    padding: 10px 15px;
     border-radius: 10px;
     user-select: none;
     background: #2a2a2a;
 }
 
+#stats__turn {
+    padding: 10px 15px;
+}
+
 #stats__instructions-button {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 25px;
     cursor: pointer;
     transition: all 0.2s;
 }
