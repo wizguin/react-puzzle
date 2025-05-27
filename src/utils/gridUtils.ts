@@ -45,3 +45,7 @@ export function resetTurnGrid() {
 export function isValidMove(grid: GridData, solution: SolvedGridData, box: number, cell: number) {
     return grid[box][cell] !== solution[box][cell]
 }
+
+export function checkGameWon(grid: GridData, solution: SolvedGridData) {
+    return JSON.stringify(grid) === JSON.stringify(solution)
+}

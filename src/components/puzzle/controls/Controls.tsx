@@ -1,8 +1,8 @@
 import './Controls.css'
 
+import { checkGameWon, resetTurnGrid } from '../../../utils/gridUtils'
 import { gridAtom, solutionAtom, turnAtom, turnGridAtom, warningAtom } from '../../../atoms'
 import ControlButton from './control_button/ControlButton'
-import { resetTurnGrid } from '../../../utils/gridUtils'
 
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 
@@ -40,7 +40,7 @@ export default function Controls() {
     }
 
     function canSubmit() {
-        if (turn > 9) {
+        if (turn > 9 || checkGameWon(grid, solution)) {
             return false
         }
 
