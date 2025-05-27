@@ -21,9 +21,7 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
     // Use value from turn if exists
     const currentValue = turnGrid[boxIndex][cellIndex] || value || ''
 
-    const active =
-        selectedCell?.box === boxIndex &&
-        selectedCell?.cell === cellIndex
+    const active = isSelectedCell()
 
     const solved = solution[boxIndex][cellIndex] === value
 
@@ -37,10 +35,21 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
     )
 
     function onClick() {
+        if (isSelectedCell()) {
+            // Deselect
+            setSelectedCell(null)
+            return
+        }
+
         setSelectedCell({
             box: boxIndex,
             cell: cellIndex
         })
+    }
+
+    function isSelectedCell() {
+        return selectedCell?.box === boxIndex &&
+            selectedCell?.cell === cellIndex
     }
 
     return (
