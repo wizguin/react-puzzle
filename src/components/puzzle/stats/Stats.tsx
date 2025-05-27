@@ -6,7 +6,7 @@ import { useAtomValue } from 'jotai'
 
 export default function Stats() {
 
-    const turn = useAtomValue(turnAtom)
+    const turn = Math.min(useAtomValue(turnAtom), 9)
 
     return (
         <div id='stats'>
