@@ -1,11 +1,13 @@
 import './App.css'
 
 import { createStartGrid, generateSolution, resetTurnGrid } from './utils/gridUtils'
-import { gridAtom, solutionAtom, turnGridAtom } from './atoms'
+import { gridAtom, instructionsVisibleAtom, solutionAtom, turnGridAtom } from './atoms'
+
+import Instructions from './components/modal/Instructions'
 import Puzzle from './components/puzzle/Puzzle'
 import Warning from './components/warning/Warning'
 
-import { useAtom, useSetAtom } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 import { useEffect } from 'react'
 
 export default function App() {
@@ -14,6 +16,8 @@ export default function App() {
 
     const setGrid = useSetAtom(gridAtom)
     const setTurnGrid = useSetAtom(turnGridAtom)
+
+    const instructionsVisible = useAtomValue(instructionsVisibleAtom)
 
     // Generates a new solution
     useEffect(() => {
@@ -32,6 +36,7 @@ export default function App() {
 
             <h1>react-puzzle</h1>
 
+            {instructionsVisible && <Instructions />}
             <Puzzle />
         </div>
     )
