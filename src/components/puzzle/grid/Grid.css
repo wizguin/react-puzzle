@@ -4,4 +4,5 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     aspect-ratio: 1 / 1;
+    animation: scaleIn 0.33s;
 }
