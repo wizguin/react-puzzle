@@ -1,6 +1,6 @@
 import type { GridData, SolvedGridData } from '../atoms'
 import { pickRandomIndex } from './randomUtils'
-import type { SolvedGridData } from '../atoms'
+import { STARTING_CELLS } from '../consts/consts'
 
 /**
  * Creates a starting grid from a solved grid, randomly picking 3 correct cells in each box.
@@ -29,7 +29,7 @@ export function createStartGrid(solution: SolvedGridData) {
 function createStartBox(box: number[]) {
     const result = Array(box.length).fill(null)
 
-    while (result.filter(Boolean).length < 3) {
+    while (result.filter(Boolean).length < STARTING_CELLS) {
         const randomIndex = pickRandomIndex(box)
 
         result[randomIndex] = box[randomIndex]

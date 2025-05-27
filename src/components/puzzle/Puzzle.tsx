@@ -5,6 +5,7 @@ import { gridAtom, solutionAtom, turnAtom } from '../../atoms'
 import Controls from './controls/Controls'
 import GameOver from './game_over/GameOver'
 import Grid from './grid/Grid'
+import { MAX_TURNS } from '../../consts/consts'
 import Stats from './stats/Stats'
 
 import { useEffect, useState } from 'react'
@@ -37,7 +38,7 @@ export default function Puzzle() {
             return
         }
 
-        if (turn > 9) {
+        if (turn > MAX_TURNS) {
             setStatus(Status.Lost)
         }
     }
