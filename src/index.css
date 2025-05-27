@@ -52,3 +52,13 @@ h1, h2 {
         scale: 1;
     }
 }
+
+@keyframes slideIn {
+    0% {
+        translate: 0 -50vh;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
