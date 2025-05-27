@@ -1,10 +1,10 @@
 import './Controls.css'
 
-import { gridAtom, solutionAtom, turnAtom, turnGridAtom } from '../../../atoms'
+import { gridAtom, solutionAtom, turnAtom, turnGridAtom, warningAtom } from '../../../atoms'
 import ControlButton from './control_button/ControlButton'
 import { resetTurnGrid } from '../../../utils/gridUtils'
 
-import { useAtom, useAtomValue } from 'jotai'
+import { useAtom, useAtomValue, useSetAtom } from 'jotai'
 
 export default function Controls() {
 
@@ -14,6 +14,7 @@ export default function Controls() {
     const [turnGrid, setTurnGrid] = useAtom(turnGridAtom)
 
     const [turn, setTurn] = useAtom(turnAtom)
+    const setWarning = useSetAtom(warningAtom)
 
     const buttons = Array.from(Array(9), (_, index) =>
         <ControlButton
@@ -50,6 +51,7 @@ export default function Controls() {
 
             // Box must have entered value for this turn
             if (turnBox.filter(Boolean).length !== 1) {
+                setWarning('Enter a new value into each box!')
                 return false
             }
         }
