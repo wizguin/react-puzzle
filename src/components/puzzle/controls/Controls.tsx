@@ -1,14 +1,16 @@
 import './Controls.css'
 
-import { gridAtom, turnAtom, turnGridAtom } from '../../../atoms'
+import { gridAtom, solutionAtom, turnAtom, turnGridAtom } from '../../../atoms'
 import ControlButton from './control_button/ControlButton'
 import { resetTurnGrid } from '../../../utils/gridUtils'
 
-import { useAtom, useSetAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 
 export default function Controls() {
 
-    const setGrid = useSetAtom(gridAtom)
+    const solution = useAtomValue(solutionAtom)
+
+    const [grid, setGrid] = useAtom(gridAtom)
     const [turnGrid, setTurnGrid] = useAtom(turnGridAtom)
 
     const [turn, setTurn] = useAtom(turnAtom)
@@ -21,7 +23,7 @@ export default function Controls() {
     )
 
     function onSubmit() {
-        if (turn >= 9) {
+        if (!canSubmit()) {
             return
         }
 
@@ -34,6 +36,29 @@ export default function Controls() {
 
         setTurnGrid(resetTurnGrid())
         setTurn(prev => prev + 1)
+    }
+
+    function canSubmit() {
+        if (turn > 9) {
+            return false
+        }
+
+        for (const [boxIndex, turnBox] of turnGrid.entries()) {
+            if (isBoxSolved(boxIndex)) {
+                continue
+            }
+
+            // Box must have entered value for this turn
+            if (turnBox.filter(Boolean).length !== 1) {
+                return false
+            }
+        }
+
+        return true
+    }
+
+    function isBoxSolved(boxIndex: number) {
+        return JSON.stringify(grid[boxIndex]) === JSON.stringify(solution[boxIndex])
     }
 
     return (
