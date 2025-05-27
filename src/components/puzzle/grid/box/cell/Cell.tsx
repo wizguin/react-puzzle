@@ -18,14 +18,20 @@ export default function Cell({ value, boxIndex, cellIndex }: Props) {
 
     const [selectedCell, setSelectedCell] = useAtom(selectedCellAtom)
 
+    // Possible value from current turn
+    const turnValue = turnGrid[boxIndex][cellIndex]
+
     // Use value from turn if exists
-    const currentValue = turnGrid[boxIndex][cellIndex] || value || ''
+    const currentValue = turnValue || value || ''
 
     const active = isSelectedCell()
 
     const solved = solution[boxIndex][cellIndex] === value
 
-    const failed = Boolean(value) && !solved
+    const isSameAsLastTurn = Boolean(turnValue) && turnValue === value
+    const isInvalidAttempt = Boolean(value) && !solved && !turnValue
+
+    const failed = isSameAsLastTurn || isInvalidAttempt
 
     const classes = classNames(
         'cell',
