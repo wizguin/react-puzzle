@@ -1,0 +1,25 @@
+#warning {
+    display: none;
+    width: 90%;
+    position: absolute;
+    padding: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    background: #8b1919;
+    animation: fadeIn 0.2s;
+}
+
+#warning.visible {
+    display: block
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
