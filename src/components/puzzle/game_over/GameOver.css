@@ -1,0 +1,4 @@
+#game-over {
+    font-size: 20px;
+    animation: fadeIn 0.5s, jumpIn 0.75s;
+}

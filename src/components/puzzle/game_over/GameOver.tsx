@@ -1,3 +1,5 @@
+import './GameOver.css'
+
 import { Status } from '../Puzzle'
 
 interface Props {
