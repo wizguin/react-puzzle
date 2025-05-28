@@ -2,6 +2,13 @@
 
 :root {
     --white: #eee;
+    --white-darker: #ddd;
+    --white-dark: #7b7b7b;
+
+    --black: #121212;
+    --black-transparent: #00000080;
+
+    --dark-gray: #1a1a1a;
 
     --green: #198b37;
     --green-active: #116d2a;
@@ -22,7 +29,7 @@
 
 body {
     margin: 0;
-    background: #121212;
+    background: var(--black);
     font-family: Fredoka, sans-serif;
     font-size: 18px;
     color: var(--white);

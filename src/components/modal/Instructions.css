@@ -17,7 +17,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #00000080;
+    background: var(--black-transparent);
 }
 
 #instructions__content {
@@ -28,7 +28,7 @@
     padding: 2rem 1rem;
     border-radius: 10px;
     z-index: 1;
-    background-color: #1a1a1a;
+    background-color: var(--dark-gray);
     animation: slideIn 0.5s;
 }
 
@@ -37,7 +37,7 @@
     flex-direction: column;
     gap: 2rem;
     margin: 2rem 0;
-    color: #ddd;
+    color: var(--white-darker);
 }
 
 #instructions__close {
