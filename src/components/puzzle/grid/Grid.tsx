@@ -5,6 +5,9 @@ import { gridAtom } from '../../../atoms'
 
 import { useAtomValue } from 'jotai'
 
+/**
+ * Grid component that contains grid boxes.
+ */
 export default function Grid() {
 
     const grid = useAtomValue(gridAtom)

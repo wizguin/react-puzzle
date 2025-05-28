@@ -11,6 +11,11 @@ interface Props {
     cellIndex: number
 }
 
+/**
+ * Cell component that displays a value.
+ * Values from turnGrid will override the one passed through props.
+ * Cells are colored based on their state in the grid.
+ */
 export default function Cell({ value, boxIndex, cellIndex }: Props) {
 
     const solution = useAtomValue(solutionAtom)

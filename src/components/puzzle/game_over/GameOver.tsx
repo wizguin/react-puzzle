@@ -10,6 +10,10 @@ interface Props {
     status: Status
 }
 
+/**
+ * Game over component that displays a message based on the game status,
+ * and a button for starting a new game.
+ */
 export default function GameOver({ status }: Props) {
 
     const setSolution = useSetAtom(solutionAtom)
@@ -18,6 +22,9 @@ export default function GameOver({ status }: Props) {
         ? 'Game over!'
         : 'You won!'
 
+    /**
+     * Generates a new solution, triggering a new game.
+     */
     function onNewClick() {
         setSolution(generateSolution())
     }

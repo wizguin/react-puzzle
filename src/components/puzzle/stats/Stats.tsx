@@ -5,10 +5,14 @@ import { MAX_TURNS } from '../../../consts/consts'
 
 import { useAtomValue, useSetAtom } from 'jotai'
 
+/**
+ * Stats component that displays the current turn and an instructions button.
+ */
 export default function Stats() {
 
     const setInstructionsVisible = useSetAtom(instructionsVisibleAtom)
 
+    // Cap visible turn at MAX_TURNS
     const turn = Math.min(useAtomValue(turnAtom), MAX_TURNS)
 
     function onInstructionsClick() {

@@ -7,6 +7,9 @@ interface Props {
     boxIndex: number
 }
 
+/**
+ * Box component that contains grid cells.
+ */
 export default function Box({ data, boxIndex }: Props) {
 
     const cells = data.map((value, index) =>

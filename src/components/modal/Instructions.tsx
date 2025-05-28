@@ -5,6 +5,9 @@ import { RULES } from '../../consts/consts'
 
 import { useSetAtom } from 'jotai'
 
+/**
+ * Instructions modal that displays the rules of the game.
+ */
 export default function Instructions() {
 
     const setInstructionsVisible = useSetAtom(instructionsVisibleAtom)

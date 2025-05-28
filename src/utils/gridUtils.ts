@@ -39,13 +39,25 @@ function createStartBox(box: number[]) {
 }
 
 export function resetTurnGrid() {
-    return Array(9).fill(Array(9).fill(null))
+    return createEmptyGrid()
 }
 
-export function isValidMove(grid: GridData, solution: SolvedGridData, box: number, cell: number) {
-    return grid[box][cell] !== solution[box][cell]
-}
-
+/**
+ * Compares a grid with a solved grid.
+ *
+ * @param grid - A grid
+ * @param solution - A solved grid
+ * @returns True if grid matches solved grid, otherwise false
+ */
 export function checkGameWon(grid: GridData, solution: SolvedGridData) {
     return JSON.stringify(grid) === JSON.stringify(solution)
+}
+
+/**
+ * Creates an empty sudoku grid.
+ *
+ * @returns An empty grid
+ */
+function createEmptyGrid() {
+    return Array(9).fill(Array(9).fill(null))
 }

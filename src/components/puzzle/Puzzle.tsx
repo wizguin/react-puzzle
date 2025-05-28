@@ -18,20 +18,25 @@ export enum Status {
     Won
 }
 
+/**
+ * Main puzzle component that manages the game status and displays the puzzle UI.
+ */
 export default function Puzzle() {
 
     const solution = useAtomValue(solutionAtom)
     const grid = useAtomValue(gridAtom)
-    const turn = useAtomValue(turnAtom)
 
+    const turn = useAtomValue(turnAtom)
     const [status, setStatus] = useState<Status>(Status.Playing)
 
+    // Check game over on grid update
     useEffect(() => checkGameOver(), [grid])
 
     // New game
     useEffect(() => setStatus(Status.Playing), [solution])
 
     function checkGameOver() {
+        // Grid not yet created
         if (!grid.length) {
             return
         }
@@ -41,11 +46,13 @@ export default function Puzzle() {
             return
         }
 
+        // Game over
         if (turn > MAX_TURNS) {
             setStatus(Status.Lost)
         }
     }
 
+    // Display Controls when playing, otherwise display GameOver
     const activeComponent = status === Status.Playing
         ? <Controls />
         : <GameOver status={status} />
