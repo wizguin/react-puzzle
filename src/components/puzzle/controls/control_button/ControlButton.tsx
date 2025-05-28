@@ -27,7 +27,7 @@ export default function ControlButton({ value }: Props) {
         return () => {
             window.removeEventListener('keydown', onKeyDown)
         }
-    }, [selectedCell])
+    }, [grid, selectedCell])
 
     function onKeyDown({ key }: KeyboardEvent) {
         if (key === value.toString()) {
