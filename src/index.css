@@ -55,6 +55,7 @@ button {
     font-family: inherit;
     color: var(--white);
     background: var(--gray);
+    -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {

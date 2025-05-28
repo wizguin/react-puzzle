@@ -6,8 +6,10 @@
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    background: var(--red);
     animation: fadeIn 0.2s;
+    user-select: none;
+    background: var(--red);
+    -webkit-tap-highlight-color: transparent;
 }
 
 #warning.visible {
