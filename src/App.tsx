@@ -1,7 +1,7 @@
 import './App.css'
 
 import { createStartGrid, generateSolution, resetTurnGrid } from './utils/gridUtils'
-import { gridAtom, instructionsVisibleAtom, solutionAtom, turnGridAtom } from './atoms'
+import { gridAtom, instructionsVisibleAtom, solutionAtom, turnAtom, turnGridAtom } from './atoms'
 
 import Instructions from './components/modal/Instructions'
 import Puzzle from './components/puzzle/Puzzle'
@@ -16,6 +16,7 @@ export default function App() {
 
     const setGrid = useSetAtom(gridAtom)
     const setTurnGrid = useSetAtom(turnGridAtom)
+    const setTurn = useSetAtom(turnAtom)
 
     const instructionsVisible = useAtomValue(instructionsVisibleAtom)
 
@@ -24,10 +25,11 @@ export default function App() {
         setSolution(generateSolution())
     }, [])
 
-    // Initialize grids for new game
+    // Initialize new game
     useEffect(() => {
         setGrid(createStartGrid(solution))
         setTurnGrid(resetTurnGrid())
+        setTurn(1)
     }, [solution])
 
     return (
