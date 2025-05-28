@@ -16,17 +16,17 @@
 }
 
 .cell.solved {
-    background: #198b37;
+    background: var(--green);
     pointer-events: none;
     cursor: default;
 }
 
 .cell.failed {
-    background: #8b1919;
+    background: var(--red);
 }
 
 .cell.failed:hover {
-    background: #aa2020;
+    background: var(--red-active);
 }
 
 .cell:hover {

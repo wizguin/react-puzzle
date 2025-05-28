@@ -21,12 +21,12 @@ export default function Stats() {
                 Turn: {turn}/{MAX_TURNS}
             </div>
 
-            <div
+            <button
                 id='stats__instructions-button'
                 onClick={onInstructionsClick}
             >
                 ?
-            </div>
+            </button>
         </div >
     )
 

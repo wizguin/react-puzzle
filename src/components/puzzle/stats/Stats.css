@@ -4,11 +4,10 @@
     justify-content: space-between;
 }
 
-#stats__turn,
-#stats__instructions-button {
+#stats__turn {
     border-radius: 10px;
     user-select: none;
-    background: #2a2a2a;
+    background: var(--gray);
 }
 
 #stats__turn {
@@ -20,11 +19,4 @@
     align-items: center;
     padding: 0 15px;
     font-size: 25px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-#stats__instructions-button:hover {
-    transform: scale(1.2);
-    background: #333;
 }

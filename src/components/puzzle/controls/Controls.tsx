@@ -70,12 +70,12 @@ export default function Controls() {
                 {buttons}
             </div>
 
-            <div
-                id='controls__submit'
+            <button
+                className='btn-success'
                 onClick={onSubmit}
             >
                 Submit Turn
-            </div>
+            </button>
         </div>
     )
 

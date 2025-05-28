@@ -6,7 +6,7 @@
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
-    background: #8b1919;
+    background: var(--red);
     animation: fadeIn 0.2s;
 }
 

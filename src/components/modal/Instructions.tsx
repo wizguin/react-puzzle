@@ -28,12 +28,12 @@ export default function Instructions() {
 
                 <ol>{rules}</ol>
 
-                <div
+                <button
                     id='instructions__close'
                     onClick={close}
                 >
                     Close
-                </div>
+                </button>
             </div>
 
         </div>

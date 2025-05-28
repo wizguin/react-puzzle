@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+:root {
+    --white: #eee;
+
+    --green: #198b37;
+    --green-active: #116d2a;
+
+    --red: #8b1919;
+    --red-active: #aa2020;
+
+    --gray: #2a2a2a;
+    --gray-active: #333;
+
+    --light-gray: #444;
+    --light-gray-active: #555;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,14 +25,50 @@ body {
     background: #121212;
     font-family: Fredoka, sans-serif;
     font-size: 18px;
-    color: #eee;
+    color: var(--white);
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
     text-align: center;
     font-weight: 500;
     user-select: none;
+}
+
+button {
+    margin: 0;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-size: 18px;
+    font-family: inherit;
+    color: var(--white);
+    background: var(--gray);
+}
+
+button:hover {
+    transform: scale(1.2);
+    background: var(--gray-active);
+}
+
+.btn-success {
+    background: var(--green);
+}
+
+.btn-success:hover {
+    background: var(--green-active);
+}
+
+.btn-light {
+    background: var(--light-gray);
+}
+
+.btn-light:hover {
+    background: var(--light-gray-active);
 }
 
 @keyframes fadeIn {

@@ -44,15 +44,4 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    padding: 10px 15px;
-    border-radius: 10px;
-    user-select: none;
-    cursor: pointer;
-    transition: all 0.2s;
-    background: #2a2a2a;
-}
-
-#instructions__close:hover {
-    transform: scale(1.2);
-    background: #333;
 }

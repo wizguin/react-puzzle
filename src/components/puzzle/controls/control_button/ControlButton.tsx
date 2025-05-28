@@ -57,12 +57,12 @@ export default function ControlButton({ value }: Props) {
     }
 
     return (
-        <div
-            className='control-button'
+        <button
+            className='btn-light control-button'
             onClick={updateSelectedCell}
         >
             {value}
-        </div>
+        </button>
     )
 
 }
