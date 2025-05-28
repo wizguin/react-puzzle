@@ -4,6 +4,7 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    animation: fadeIn 1s;
 }
 
 #controls__numbers {
