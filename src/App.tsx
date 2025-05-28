@@ -1,6 +1,6 @@
 import './App.css'
 
-import { createStartGrid, generateSolution, resetTurnGrid } from './utils/gridUtils'
+import { createStartGrid, generateSolution, resetTurnGrid } from './utils'
 import { gridAtom, instructionsVisibleAtom, solutionAtom, turnAtom, turnGridAtom } from './atoms'
 
 import Instructions from './components/modal/Instructions'

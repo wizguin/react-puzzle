@@ -1,6 +1,6 @@
 import './Controls.css'
 
-import { checkGameWon, resetTurnGrid } from '../../../utils/gridUtils'
+import { checkGameWon, resetTurnGrid } from '../../../utils'
 import { gridAtom, solutionAtom, turnAtom, turnGridAtom, warningAtom } from '../../../atoms'
 import ControlButton from './control_button/ControlButton'
 import { MAX_TURNS } from '../../../consts/consts'

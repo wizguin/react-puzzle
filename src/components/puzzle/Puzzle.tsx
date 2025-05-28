@@ -9,7 +9,7 @@ import { MAX_TURNS } from '../../consts/consts'
 import Stats from './stats/Stats'
 
 import { useEffect, useState } from 'react'
-import { checkGameWon } from '../../utils/gridUtils'
+import { checkGameWon } from '../../utils'
 import { useAtomValue } from 'jotai'
 
 export enum Status {

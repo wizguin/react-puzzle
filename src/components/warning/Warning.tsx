@@ -1,6 +1,6 @@
 import './Warning.css'
 
-import { classNames } from '../../utils/cssUtils'
+import { classNames } from '../../utils'
 import { warningAtom } from '../../atoms'
 
 import { useAtom } from 'jotai'

@@ -1,6 +1,6 @@
 import './GameOver.css'
 
-import { generateSolution } from '../../../utils/gridUtils'
+import { generateSolution } from '../../../utils'
 import { solutionAtom } from '../../../atoms'
 import { Status } from '../Puzzle'
 

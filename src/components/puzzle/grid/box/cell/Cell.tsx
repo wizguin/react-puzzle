@@ -1,7 +1,7 @@
 import './Cell.css'
 
 import { selectedCellAtom, solutionAtom, turnGridAtom } from '../../../../../atoms'
-import { classNames } from '../../../../../utils/cssUtils'
+import { classNames } from '../../../../../utils'
 
 import { useAtom, useAtomValue } from 'jotai'
 
