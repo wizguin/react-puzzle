@@ -28,6 +28,9 @@ export default function Puzzle() {
 
     useEffect(() => checkGameOver(), [grid])
 
+    // New game
+    useEffect(() => setStatus(Status.Playing), [solution])
+
     function checkGameOver() {
         if (!grid.length) {
             return
