@@ -1,4 +1,8 @@
 #game-over {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     font-size: 20px;
     animation: fadeIn 0.5s, jumpIn 0.75s;
 }
