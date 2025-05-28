@@ -13,7 +13,11 @@ export default function Instructions() {
         setInstructionsVisible(false)
     }
 
-    const rules = RULES.map(rule => <li>{rule}</li>)
+    const rules = RULES.map((rule, index) =>
+        <li key={index}>
+            {rule}
+        </li>
+    )
 
     return (
         <div id='instructions'>
